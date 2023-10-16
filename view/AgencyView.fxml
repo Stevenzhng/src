@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="800.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AgencyController">
+    
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <ImageView fx:id="agency" fitHeight="200" fitWidth="770">
+                <image>
+                    <Image url="image/agency.png"/>
+                </image>
+            </ImageView>
+            <Separator/>
+            <HBox alignment="CENTER">
+                <Label text="Hi " styleClass="heading"/>
+                <Label fx:id="NameLabel" styleClass="heading"/>
+                <Label text=", welcome to the Prog2 Travel Agency" styleClass="heading"/>
+            </HBox>
+            <Separator/>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="0">
+            <Button text="Explore Flights" onAction="#ExploreFlight" styleClass="button" prefWidth="200.0"/>
+            <Button text="Explore Destinations" onAction="#ExploreDestination" styleClass="button" prefWidth="200.0"/>
+            <Button text="Book a Trip" onAction="#BookTrip" styleClass="button" prefWidth="200.0"/>
+            <Button text="Exit" onAction="#ExitButton" styleClass="button" prefWidth="200.0"/>
+        </HBox>
+    </bottom>
+
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+
+</BorderPane>
