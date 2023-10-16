@@ -8,10 +8,11 @@ public class Flights {
 
     private ObservableList<Flight> flights;
     private Agency agency;
-
+    
     public Flights(Agency agency) {
         this.agency = agency;
         flights = FXCollections.<Flight>observableArrayList();
+        
     }
 
     public Flights(ObservableList<Itinery> itinery) {

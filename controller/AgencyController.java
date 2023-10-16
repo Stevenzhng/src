@@ -24,8 +24,9 @@ public class AgencyController extends Controller {
         
         // Load scene 
         Scene scene = new Scene(loader.load());
-        Stage popupStage = new Stage();
         
+        Stage popupStage = new Stage();
+
         popupStage.setScene(scene);
         popupStage.setTitle("Explore Flights");
         popupStage.show();
@@ -37,14 +38,42 @@ public class AgencyController extends Controller {
 
     @FXML
     public void ExploreDestination(ActionEvent event) {
-        // Your logic here to explore destinations
-        System.out.println("Exploring Destinations...");
+    try {
+        // Load FXML
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Destinations/ExploreDestinationsView.fxml"));
+        
+        // Load scene 
+        Scene scene = new Scene(loader.load());
+        
+        Stage popupStage = new Stage();
+
+        popupStage.setScene(scene);
+        popupStage.setTitle("Explore Destinations");
+        popupStage.show();
+        
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     public void BookTrip(ActionEvent event) {
-        // Your logic here to book a trip
-        System.out.println("Booking a Trip...");
+    try {
+        // Load FXML
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Trip/DisplayTripView.fxml"));
+        
+        // Load scene 
+        Scene scene = new Scene(loader.load());
+        
+        Stage popupStage = new Stage();
+
+        popupStage.setScene(scene);
+        popupStage.setTitle("Book Trip");
+        popupStage.show();
+        
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
