@@ -16,22 +16,82 @@ public class ExploreFlightsController extends Controller{
 
     @FXML
     public void handleViewAllFlights(ActionEvent event) {
-        // Implement logic for viewing all flights
+        try {
+            // Load FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Flights/DisplayFlightsView.fxml"));
+    
+            // Load scene 
+            Scene scene = new Scene(loader.load());
+            
+            Stage popupStage = new Stage();
+    
+            popupStage.setScene(scene);
+            popupStage.setTitle("View Flights");
+            popupStage.show();
+            
+            } catch (IOException e) {
+                e.printStackTrace();
+        }    
     }
 
     @FXML
     public void handleViewFlightsByCountry(ActionEvent event) {
-        // Implement logic for viewing flights by country
+        try {
+            // Load FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Flights/DisplayFilteredFlightsView.fxml"));
+            
+            // Load scene 
+            Scene scene = new Scene(loader.load());
+            
+            Stage popupStage = new Stage();
+    
+            popupStage.setScene(scene);
+            popupStage.setTitle("View Flights Filtered");
+            popupStage.show();
+            
+            } catch (IOException e) {
+                e.printStackTrace();
+        }    
     }
 
     @FXML
     public void handleAddFlight(ActionEvent event) {
-        // Implement logic for adding a new flight
+        try {
+            // Load FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Flights/AddFlightView.fxml"));
+            
+            // Load scene 
+            Scene scene = new Scene(loader.load());
+            
+            Stage popupStage = new Stage();
+    
+            popupStage.setScene(scene);
+            popupStage.setTitle("Add Flights");
+            popupStage.show();
+            
+            } catch (IOException e) {
+                e.printStackTrace();
+        }    
     }
 
     @FXML
     public void handleRemoveFlight(ActionEvent event) {
-        // Implement logic for removing a flight
+        try {
+            // Load FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Flights/RemoveFlightView.fxml"));
+            
+            // Load scene 
+            Scene scene = new Scene(loader.load());
+            
+            Stage popupStage = new Stage();
+    
+            popupStage.setScene(scene);
+            popupStage.setTitle("Remove Flight");
+            popupStage.show();
+            
+            } catch (IOException e) {
+                e.printStackTrace();
+        }    
     }
 
     @FXML

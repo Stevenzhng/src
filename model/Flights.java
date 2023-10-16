@@ -59,4 +59,11 @@ public class Flights {
         for (Flight f : flights) { cost += f.getCost(); }
         return cost;
     }
+
+    public void insertDummyData() {
+        flights.add(new Flight("American Airlines", 101, "JFK", "LHR", 500.00));
+        flights.add(new Flight("Delta Air Lines", 102, "LAX", "CDG", 700.00));
+        flights.add(new Flight("Qantas", 103, "SYD", "HND", 450.00));
+        flights.add(new Flight("Air India", 104, "ORD", "DEL", 900.00));
+    }    
 }

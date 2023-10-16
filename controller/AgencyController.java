@@ -38,24 +38,24 @@ public class AgencyController extends Controller {
 
     @FXML
     public void ExploreDestination(ActionEvent event) {
-    try {
-        // Load FXML
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Destinations/ExploreDestinationsView.fxml"));
-        
-        // Load scene 
-        Scene scene = new Scene(loader.load());
-        
-        Stage popupStage = new Stage();
-
-        popupStage.setScene(scene);
-        popupStage.setTitle("Explore Destinations");
-        popupStage.show();
-        
-        } catch (IOException e) {
-            e.printStackTrace();
+        try {
+            // Load FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Destinations/ExploreDestinationsView.fxml"));
+            
+            // Load scene 
+            Scene scene = new Scene(loader.load());
+            
+            Stage popupStage = new Stage();
+    
+            popupStage.setScene(scene);
+            popupStage.setTitle("Explore Destinations");
+            popupStage.show();
+            
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-    }
-
+    
     @FXML
     public void BookTrip(ActionEvent event) {
     try {

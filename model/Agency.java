@@ -13,7 +13,6 @@ public class Agency {
         this.flights = new Flights(this);
 
         admins.insertDummyData();
-        destinations.insertDummyData();
     }
 
     public Administrator getLoggedInUser() {
