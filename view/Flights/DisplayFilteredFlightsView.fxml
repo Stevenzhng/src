@@ -11,19 +11,36 @@
 
 <VBox alignment="CENTER" styleClass="background" prefHeight="800.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Flights.DisplayFlightsController">
     <VBox alignment="CENTER" spacing="10">
+            <ImageView fx:id="flight" fitHeight="200" fitWidth="600">
+                <image>
+                    <Image url="image/flight.png"/>
+                </image>
+            </ImageView>
+            <Separator/>
+            <HBox alignment="CENTER">
+                <Label text="Flights" styleClass="heading"/>
+            </HBox>
+            <Separator/>
+        
+            <Label text="Country" styleClass="heading"/>
+
         <HBox alignment="CENTER" spacing="10">
-            <TextField fx:id="searchField" onKeyReleased="#handleSearch" />
+            <TextField fx:id="searchField" onKeyReleased="#handleSearch" prefWidth="600" />
         </HBox>
         <TableView fx:id="flightsTable">
             <columns>
-                <TableColumn text="Airline" fx:id="airlineColumn" />
-                <TableColumn text="Flight Number" fx:id="flightNumberColumn" />
-                <TableColumn text="Takeoff Country" fx:id="takeoffCountryColumn" />
-                <TableColumn text="Landing Country" fx:id="landingCountryColumn" />
-                <TableColumn text="Cost" fx:id="costColumn" />
+                <TableColumn prefWidth="120" text="Airline" fx:id="airlineColumn" />
+                <TableColumn prefWidth="120" text="Flight Number" fx:id="flightNumberColumn" />
+                <TableColumn prefWidth="120" text="Takeoff Country" fx:id="takeoffCountryColumn" />
+                <TableColumn prefWidth="120" text="Landing Country" fx:id="landingCountryColumn" />
+                <TableColumn prefWidth="120" text="Cost" fx:id="costColumn" />
             </columns>
         </TableView>
         
+        <HBox alignment="CENTER" spacing="10" >
+            <Button text="Close" onAction="#closeWindow" prefWidth="600"/>
+        </HBox>
+
         <stylesheets>
         <URL value="@../style.css"/>
         </stylesheets>      

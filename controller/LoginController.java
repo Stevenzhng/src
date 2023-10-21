@@ -31,8 +31,11 @@ public class LoginController extends Controller<Agency> {
 
     @FXML
     public String name;
-
- @FXML
+    
+    @FXML
+    private Label NameLabel;
+    
+    @FXML
     private void LoginButton(ActionEvent event) throws IOException {
         String username = usernameField.getText();
         String password = passwordField.getText();
@@ -66,6 +69,10 @@ public class LoginController extends Controller<Agency> {
             e.printStackTrace();
             InvalidCredentialsException.show("Error", "InvalidCredentialsException", "Invalid credentials provided.");
         }
+    }
+
+    public void setNameLabel(String name) {
+        NameLabel.setText(name);
     }
 
     @FXML

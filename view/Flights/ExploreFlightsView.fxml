@@ -29,12 +29,12 @@
     </center>
 
     <bottom>
-        <HBox alignment="CENTER" spacing="20">
-            <Button text="View All Flights" onAction="#handleViewAllFlights" styleClass="button" prefWidth="150.0"/>
-            <Button text="View Flights by Country" onAction="#handleViewFlightsByCountry" styleClass="button" prefWidth="150.0"/>
-            <Button text="Add Flight" onAction="#handleAddFlight" styleClass="button" prefWidth="150.0"/>
-            <Button text="Remove Flight" onAction="#handleRemoveFlight" styleClass="button" prefWidth="150.0"/>
-            <Button text="Close Agency Menu" onAction="#handleCloseMenu" styleClass="button" prefWidth="150.0"/>
+        <HBox alignment="CENTER" >
+            <Button text="View All Flights" onAction="#handleViewAllFlights" styleClass="button" prefWidth="160.0"/>
+            <Button text="View Flights by Country" onAction="#handleViewFlightsByCountry" styleClass="button" prefWidth="160.0"/>
+            <Button text="Add Flight" onAction="#handleAddFlight" styleClass="button" prefWidth="160.0"/>
+            <Button text="Remove Flight" onAction="#handleRemoveFlight" styleClass="button" prefWidth="160.0"/>
+            <Button text="Close Agency Menu" onAction="#handleCloseMenu" styleClass="button" prefWidth="160.0"/>
         </HBox>
     </bottom>
 

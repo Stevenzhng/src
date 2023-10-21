@@ -2,11 +2,14 @@ package controller.Flights;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model.Flights;
 import model.Agency;
 import model.Flight;
@@ -61,4 +64,11 @@ public class DisplayFlightsController {
             flightsTable.setItems(filteredList);
         }
     }
+
+    @FXML
+    private void closeWindow(ActionEvent event) {
+        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
+        
 }
