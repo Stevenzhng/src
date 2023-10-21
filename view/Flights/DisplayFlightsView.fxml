@@ -11,6 +11,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.Insets?>  
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-       
+<VBox fx:id="flightContainer" alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Flights.DisplayFlightsController" >    
+    <TableView fx:id="flightsTable">
+        <columns>
+            <TableColumn text="Airline" fx:id="airlineColumn" />
+            <TableColumn text="Flight Number" fx:id="flightNumberColumn" />
+            <TableColumn text="Takeoff Country" fx:id="takeoffCountryColumn" />
+            <TableColumn text="Landing Country" fx:id="landingCountryColumn" />
+            <TableColumn text="Cost" fx:id="costColumn" />
+        </columns>
+    </TableView>
+    
+    <stylesheets>
+        <URL value="@../style.css"/>
+    </stylesheets>    
 </VBox>
+

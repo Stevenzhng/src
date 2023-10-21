@@ -3,6 +3,8 @@ package model;
 import java.util.LinkedList;
 import javafx.collections.*;
 import model.Exceptions.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Flights {
 
@@ -60,10 +62,13 @@ public class Flights {
         return cost;
     }
 
-    public void insertDummyData() {
-        flights.add(new Flight("American Airlines", 101, "JFK", "LHR", 500.00));
-        flights.add(new Flight("Delta Air Lines", 102, "LAX", "CDG", 700.00));
-        flights.add(new Flight("Qantas", 103, "SYD", "HND", 450.00));
-        flights.add(new Flight("Air India", 104, "ORD", "DEL", 900.00));
-    }    
+    public ObservableList<Flight> flightslist() {
+        ObservableList<Flight> flightsList = FXCollections.observableArrayList();
+        flightsList.add(new Flight("American Airlines", 101, "JFK", "LHR", 500.00));
+        flightsList.add(new Flight("Delta Air Lines", 102, "LAX", "CDG", 700.00));
+        flightsList.add(new Flight("Qantas", 103, "SYD", "HND", 450.00));
+        flightsList.add(new Flight("Air India", 104, "ORD", "DEL", 900.00));
+        return flightsList;
+    }
+    
 }
