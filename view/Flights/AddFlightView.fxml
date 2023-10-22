@@ -31,6 +31,6 @@
         <Label text="Cost:" />
         <TextField fx:id="costField" />
     </HBox>
-    <Button text="Add Flight" onAction="#handleAddFlight" />        
+    <Button text="Add Flight" onAction="#addFlight" />        
 </VBox>
 

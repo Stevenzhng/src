@@ -58,7 +58,7 @@ public class Destinations {
         return FXCollections.<Destination>observableArrayList(filtered);
     }
 
-    public void insertDummyData() {
+    public void insertDummyData() {        
         destinations.add(new Destination("Eiffel Tower", "France"));
         destinations.add(new Destination("Opera House", "Australia"));
         destinations.add(new Destination("Uluru", "Australia"));
@@ -68,5 +68,6 @@ public class Destinations {
         for (Destination d : destinations) {
             Utils.addFlightsForDestination(d, agency);
         }
+        
     }
 }

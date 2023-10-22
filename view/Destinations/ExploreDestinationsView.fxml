@@ -29,17 +29,17 @@
     </center>
 
     <bottom>
-        <HBox alignment="CENTER" spacing="20">
-            <Button text="View All Destinations" onAction="#handleViewAllDestinations" styleClass="button" prefWidth="150.0"/>
-            <Button text="View filtered Destinations" onAction="#handleViewFilterDestinations" styleClass="button" prefWidth="150.0"/>
-            <Button text="Add Destination" onAction="#handleAddDestination" styleClass="button" prefWidth="150.0"/>
-            <Button text="Remove Destination" onAction="#handleRemoveDestination" styleClass="button" prefWidth="150.0"/>
-            <Button text="Close" onAction="#handleCloseMenu" styleClass="button" prefWidth="150.0"/>
+        <HBox alignment="CENTER">
+            <Button text="View All Destinations" onAction="#handleViewAllDestinations" styleClass="button" prefWidth="160.0"/>
+            <Button text="View filtered Destinations" onAction="#handleViewFilterDestinations" styleClass="button" prefWidth="160.0"/>
+            <Button text="Add Destination" onAction="#handleAddDestination" styleClass="button" prefWidth="160.0"/>
+            <Button text="Remove Destination" onAction="#handleRemoveDestination" styleClass="button" prefWidth="160.0"/>
+            <Button text="Close" onAction="#handleCloseMenu" styleClass="button" prefWidth="160.0"/>
         </HBox>
     </bottom>
 
     <stylesheets>
-        <URL value="@style.css"/>
+        <URL value="@../style.css"/>
     </stylesheets>
 
 </BorderPane>

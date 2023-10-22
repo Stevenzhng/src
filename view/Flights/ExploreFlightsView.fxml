@@ -34,7 +34,7 @@
             <Button text="View Flights by Country" onAction="#handleViewFlightsByCountry" styleClass="button" prefWidth="160.0"/>
             <Button text="Add Flight" onAction="#handleAddFlight" styleClass="button" prefWidth="160.0"/>
             <Button text="Remove Flight" onAction="#handleRemoveFlight" styleClass="button" prefWidth="160.0"/>
-            <Button text="Close Agency Menu" onAction="#handleCloseMenu" styleClass="button" prefWidth="160.0"/>
+            <Button text="Close" onAction="#handleCloseMenu" styleClass="button" prefWidth="160.0"/>
         </HBox>
     </bottom>
 
