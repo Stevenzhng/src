@@ -10,9 +10,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import model.Destinations;
 
 public class ExploreDestinationsController extends Controller{
     // Your existing code here
+    private Destinations destinations;
+
+    public void setDestinations(Destinations destinations) {
+        this.destinations = destinations;
+    }
 
     @FXML
     public void handleViewAllDestinations(ActionEvent event) {
@@ -58,11 +64,11 @@ public class ExploreDestinationsController extends Controller{
     public void handleAddDestination(ActionEvent event) {
         try {
             // Load FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Destinations/AddDestinationView.fxml"));
-            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Destinations/AddDestinationView.fxml"));            
             // Load scene 
             Scene scene = new Scene(loader.load());
-            
+            ModifyDestinationsController controller = loader.getController();
+            controller.setDestinations(destinations);            
             Stage popupStage = new Stage();
     
             popupStage.setScene(scene);
@@ -96,7 +102,23 @@ public class ExploreDestinationsController extends Controller{
 
     @FXML
     public void handleCloseMenu(ActionEvent event) {
-        // Implement logic for closing the agency menu
+         // Implement logic for closing the agency menu
+         try {
+            // Load FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AgencyView.fxml"));
+            
+            // Load scene 
+            Scene scene = new Scene(loader.load());
+            
+            Stage popupStage = new Stage();
+    
+            popupStage.setScene(scene);
+            popupStage.setTitle("Remove Flight");
+            popupStage.show();
+            
+            } catch (IOException e) {
+                e.printStackTrace();
+        }      
     }
 }
 

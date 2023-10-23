@@ -36,7 +36,7 @@ public class DisplayDestinationsController {
 
         // Bind the columns to properties
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        countryColumn.setCellValueFactory(new PropertyValueFactory<>("country"));
+        countryColumn.setCellValueFactory(new PropertyValueFactory<>("country"));    
     }
 
     @FXML
@@ -56,16 +56,6 @@ public class DisplayDestinationsController {
         }
     }
 
-    public void refreshTableView() {
-        destinationsTable.setItems(destinations.getDestinations());
-        destinationsTable.refresh();
-
-        // Print destinations
-        System.out.println("Destinations: ");
-        for (Destination destination : destinations.getDestinations()) {
-            System.out.println(destination.getName() + " - " + destination.getCountry());
-        }
-    }
 
     @FXML
     private void closeWindow(ActionEvent event) {

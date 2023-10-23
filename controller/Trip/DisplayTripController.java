@@ -37,6 +37,22 @@ public class DisplayTripController extends Controller{
     @FXML
     public void handleCloseMenu(ActionEvent event) {
         // Implement logic for closing the agency menu
+        try {
+            // Load FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AgencyView.fxml"));
+            
+            // Load scene 
+            Scene scene = new Scene(loader.load());
+            
+            Stage popupStage = new Stage();
+    
+            popupStage.setScene(scene);
+            popupStage.setTitle("Remove Flight");
+            popupStage.show();
+            
+            } catch (IOException e) {
+                e.printStackTrace();
+        }      
     }
 }
 
