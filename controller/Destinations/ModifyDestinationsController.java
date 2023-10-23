@@ -27,5 +27,4 @@ public class ModifyDestinationsController {
         destinationsInstance.addDestination(destination);
         System.out.println("Added destination: " + name + ", " + country);
     }
-    
 }

@@ -62,13 +62,13 @@ public class Destinations {
         return FXCollections.<Destination>observableArrayList(filtered);
     }
 
-    public void insertDummyData() {        
+    public void insertDummyData() {    
         destinations.add(new Destination("Eiffel Tower", "France"));
         destinations.add(new Destination("Opera House", "Australia"));
         destinations.add(new Destination("Uluru", "Australia"));
         destinations.add(new Destination("Machu Picchu", "Peru"));
         destinations.add(new Destination("Great Pyramids", "Egypt"));
-        destinations.add(new Destination("Niagara Falls", "Canada"));
+        destinations.add(new Destination("Niagara Falls", "Canada"));  
         for (Destination d : destinations) {
             Utils.addFlightsForDestination(d, agency);
         }
@@ -79,5 +79,15 @@ public class Destinations {
             instance = new Destinations(agency);
         }
         return instance;
+    }
+
+    public boolean hasDummyData() {
+        for (Destination d : destinations) {
+            if (d.getName().equals("Eiffel Tower") && d.getCountry().equals("France")) {
+                return true;
+            }
+            // ... Add other checks for other dummy destinations if needed
+        }
+        return false;
     }
 }

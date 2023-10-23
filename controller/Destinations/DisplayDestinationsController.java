@@ -29,8 +29,10 @@ public class DisplayDestinationsController {
 
     @FXML
     public void initialize() {
-        destinations.insertDummyData(); // Insert dummy data before populating the table    
-        originalList = destinations.getDestinations();
+        if (!destinations.hasDummyData()) {
+            destinations.insertDummyData();
+        }
+                originalList = destinations.getDestinations();
         // Set items for the table
         destinationsTable.setItems(originalList);
 
