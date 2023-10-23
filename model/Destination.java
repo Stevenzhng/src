@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 import javafx.beans.property.*;
 
 public class Destination implements Itinery {
@@ -32,5 +34,19 @@ public class Destination implements Itinery {
     public String toString() {
         return name.get() + " in " + country.get();
     }
+
+@Override
+public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Destination that = (Destination) o;
+    return Objects.equals(name, that.name) &&
+           Objects.equals(country, that.country);
+}
+
+@Override
+public int hashCode() {
+    return Objects.hash(name, country);
+}
     
 }

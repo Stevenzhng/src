@@ -30,7 +30,6 @@ public class ExploreDestinationsController extends Controller{
             Scene scene = new Scene(loader.load());
             
             Stage popupStage = new Stage();
-    
             popupStage.setScene(scene);
             popupStage.setTitle("View Destinations");
             popupStage.show();
