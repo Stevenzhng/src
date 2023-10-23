@@ -32,4 +32,5 @@ public class Destination implements Itinery {
     public String toString() {
         return name.get() + " in " + country.get();
     }
+    
 }

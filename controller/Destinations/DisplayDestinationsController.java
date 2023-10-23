@@ -58,7 +58,6 @@ public class DisplayDestinationsController {
         }
     }
 
-
     @FXML
     private void closeWindow(ActionEvent event) {
         Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();

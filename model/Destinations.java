@@ -86,7 +86,6 @@ public class Destinations {
             if (d.getName().equals("Eiffel Tower") && d.getCountry().equals("France")) {
                 return true;
             }
-            // ... Add other checks for other dummy destinations if needed
         }
         return false;
     }

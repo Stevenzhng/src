@@ -4,11 +4,24 @@
 <?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.geometry.Pos?>
-<?import javafx.scene.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>	
+<?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="420.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-           
+<VBox alignment="CENTER" styleClass="background" prefHeight="420.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Destinations.ModifyDestinationsController">
+    <Label text="Remove Destination" styleClass="heading" />
+    <HBox spacing="5" alignment="CENTER">
+        <Label text="Name:   " />
+        <TextField fx:id="nameField" />
+    </HBox>
+    <HBox spacing="5" alignment="CENTER">
+        <Label text="Country:" />
+        <TextField fx:id="countryField" />
+    </HBox>            
+    <Button text="Remove Destination" onAction="#removeDestination" />  
+
+    <stylesheets>
+        <URL value="@../style.css"/>
+    </stylesheets>
 </VBox>
