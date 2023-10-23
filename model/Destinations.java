@@ -9,6 +9,7 @@ public class Destinations {
 
     private ObservableList<Destination> destinations;
     private Agency agency;
+    private static Destinations instance;
 
     public Destinations(Agency agency) {
         this.agency = agency;
@@ -18,6 +19,9 @@ public class Destinations {
     public Destinations(ObservableList<Itinery> itinery) {
         this.destinations = FXCollections.<Destination>observableArrayList();
         for (Itinery i : itinery) { this.destinations.add((Destination)i); }
+    }
+
+    public Destinations(String name, String country) {
     }
 
     public ObservableList<Destination> getDestinations() {
@@ -69,5 +73,11 @@ public class Destinations {
             Utils.addFlightsForDestination(d, agency);
         }
         
+    }
+    public static Destinations getInstance(Agency agency) {
+        if (instance == null) {
+            instance = new Destinations(agency);
+        }
+        return instance;
     }
 }

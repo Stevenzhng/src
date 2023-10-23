@@ -14,10 +14,10 @@ import model.Destinations;
 
 public class ExploreDestinationsController extends Controller{
     // Your existing code here
-    private Destinations destinations;
+    private Destinations destinationsModel;
 
     public void setDestinations(Destinations destinations) {
-        this.destinations = destinations;
+        this.destinationsModel = destinations;
     }
 
     @FXML
@@ -67,10 +67,8 @@ public class ExploreDestinationsController extends Controller{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Destinations/AddDestinationView.fxml"));            
             // Load scene 
             Scene scene = new Scene(loader.load());
-            ModifyDestinationsController controller = loader.getController();
-            controller.setDestinations(destinations);            
             Stage popupStage = new Stage();
-    
+
             popupStage.setScene(scene);
             popupStage.setTitle("Add Destination");
             popupStage.show();

@@ -24,7 +24,7 @@ public class DisplayDestinationsController {
     @FXML
     private TextField searchField;    
 
-    private Destinations destinations = new Destinations(new Agency());
+    private Destinations destinations = Destinations.getInstance(new Agency());
     private ObservableList<Destination> originalList;
 
     @FXML
