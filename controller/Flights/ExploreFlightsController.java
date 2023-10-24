@@ -10,10 +10,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import model.Flights;
 
 public class ExploreFlightsController extends Controller{
-    // Your existing code here
+    private Flights flightsModel;
 
+    public void setFlights(Flights flights) {
+        this.flightsModel = flights;
+    }
     @FXML
     public void handleViewAllFlights(ActionEvent event) {
         try {
@@ -21,8 +25,7 @@ public class ExploreFlightsController extends Controller{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Flights/DisplayFlightsView.fxml"));
     
             // Load scene 
-            Scene scene = new Scene(loader.load());
-            
+            Scene scene = new Scene(loader.load());                        
             Stage popupStage = new Stage();
     
             popupStage.setScene(scene);

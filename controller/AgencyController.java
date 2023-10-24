@@ -5,6 +5,7 @@ import java.io.IOException;
 import au.edu.uts.ap.javafx.Controller;
 import controller.Destinations.ExploreDestinationsController;
 import controller.Destinations.ModifyDestinationsController;
+import controller.Flights.ExploreFlightsController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import model.Destinations;
+import model.Flights;
 
 public class AgencyController extends Controller {
 
@@ -20,9 +22,13 @@ public class AgencyController extends Controller {
     private Label NameLabel; 
     
     private Destinations destinationsModel;
+    private Flights flightsModel;
 
     public void setDestinationsModel(Destinations destinations) {
         this.destinationsModel = destinations;
+    }
+    public void setFlightsModel(Flights flights) {
+        this.flightsModel = flights;
     }
 
     @FXML
@@ -33,7 +39,9 @@ public class AgencyController extends Controller {
         
         // Load scene 
         Scene scene = new Scene(loader.load());
-        
+        ExploreFlightsController controller = loader.getController();
+        controller.setFlights(flightsModel);
+
         Stage popupStage = new Stage();
 
         popupStage.setScene(scene);

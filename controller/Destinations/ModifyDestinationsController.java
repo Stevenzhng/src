@@ -28,6 +28,7 @@ public class ModifyDestinationsController {
         destinationsInstance.addDestination(destination);
         System.out.println("Added destination: " + name + ", " + country);
     }
+    
     public void removeDestination() throws ItemNotFoundException {
         String name = nameField.getText();
         String country = countryField.getText();

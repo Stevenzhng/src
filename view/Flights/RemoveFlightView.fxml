@@ -9,6 +9,28 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="420.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
-        
+<VBox alignment="CENTER" styleClass="background" prefHeight="420.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Flights.ModifyFlightsController">
+    <Label text="Remove Flight" styleClass="heading" />
+    <HBox spacing="5" alignment="CENTER">
+        <Label text="Airline:" />
+        <TextField fx:id="airlineField" />
+    </HBox>
+    <HBox spacing="5" alignment="CENTER">
+        <Label text="Flight Number:" />
+        <TextField fx:id="flightNumberField" />
+    </HBox>
+    <HBox spacing="5" alignment="CENTER">
+        <Label text="Takeoff Country:" />
+        <TextField fx:id="takeoffCountryField" />
+    </HBox>
+    <HBox spacing="5" alignment="CENTER">
+        <Label text="Landing Country:" />
+        <TextField fx:id="landingCountryField" />
+    </HBox>
+    <HBox spacing="5" alignment="CENTER">
+        <Label text="Cost:" />
+        <TextField fx:id="costField" />
+    </HBox>
+    <Button text="Remove Flight" onAction="#removeFlight" />        
 </VBox>
+

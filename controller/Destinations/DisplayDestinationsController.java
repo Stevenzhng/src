@@ -1,5 +1,6 @@
 package controller.Destinations;
 
+import au.edu.uts.ap.javafx.Controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,7 +15,7 @@ import model.Destination;
 import model.Destinations;
 import model.Agency;
 
-public class DisplayDestinationsController {
+public class DisplayDestinationsController extends Controller{
     @FXML
     private TableView<Destination> destinationsTable;
     @FXML
@@ -32,7 +33,7 @@ public class DisplayDestinationsController {
         if (!destinations.hasDummyData()) {
             destinations.insertDummyData();
         }
-                originalList = destinations.getDestinations();
+        originalList = destinations.getDestinations();
         // Set items for the table
         destinationsTable.setItems(originalList);
 

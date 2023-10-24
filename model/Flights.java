@@ -10,11 +10,12 @@ public class Flights {
 
     private ObservableList<Flight> flights;
     private Agency agency;
+    private static Flights instance;
     
     public Flights(Agency agency) {
         this.agency = agency;
         flights = FXCollections.<Flight>observableArrayList();
-        
+        flights.addAll(flightslist());  
     }
 
     public Flights(ObservableList<Itinery> itinery) {
@@ -70,5 +71,10 @@ public class Flights {
         flightsList.add(new Flight("Air India", 104, "ORD", "DEL", 900.00));
         return flightsList;
     }
-    
+    public static Flights getInstance(Agency agency) {
+        if (instance == null) {
+            instance = new Flights(agency);
+        }
+        return instance;
+    }
 }

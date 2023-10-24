@@ -12,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Flights;
 import model.Agency;
+import model.Destinations;
 import model.Flight;
 
 
@@ -31,12 +32,13 @@ public class DisplayFlightsController {
     @FXML
     private TextField searchField;
 
-    private Flights flights = new Flights(new Agency());
+    private Flights flights = Flights.getInstance(new Agency());
     private ObservableList<Flight> originalList;
 
+    
     @FXML
-    public void initialize() {
-        originalList = flights.flightslist();
+    public void initialize() {    
+        originalList = flights.getFlights();
         // Set items for the table
         flightsTable.setItems(originalList);
 
@@ -69,6 +71,6 @@ public class DisplayFlightsController {
     private void closeWindow(ActionEvent event) {
         Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
         stage.close();
-    }
+    }    
         
 }

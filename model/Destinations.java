@@ -21,9 +21,6 @@ public class Destinations {
         for (Itinery i : itinery) { this.destinations.add((Destination)i); }
     }
 
-    public Destinations(String name, String country) {
-    }
-
     public ObservableList<Destination> getDestinations() {
         return this.destinations;
     }
