@@ -6,6 +6,7 @@ import au.edu.uts.ap.javafx.Controller;
 import controller.Destinations.ExploreDestinationsController;
 import controller.Destinations.ModifyDestinationsController;
 import controller.Flights.ExploreFlightsController;
+import controller.Trip.DisplayTripController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,7 +22,13 @@ public class AgencyController extends Controller {
 
     @FXML
     private Label NameLabel; 
-    
+    private String name;
+
+    public void setName(String name) {
+        this.name = name;
+        NameLabel.setText(this.name); 
+    }
+
     private Destinations destinationsModel;
     private Flights flightsModel;
 
@@ -42,7 +49,7 @@ public class AgencyController extends Controller {
         Scene scene = new Scene(loader.load());
         ExploreFlightsController controller = loader.getController();
         controller.setFlights(flightsModel);
-
+        controller.setName(name);
         Stage popupStage = new Stage();
         popupStage.getIcons().add(new Image("/image/flights_icon.png"));
         popupStage.setScene(scene);
@@ -64,7 +71,7 @@ public class AgencyController extends Controller {
             Scene scene = new Scene(loader.load());
             ExploreDestinationsController controller = loader.getController();
             controller.setDestinations(destinationsModel);
-
+            controller.setName(name);
             Stage popupStage = new Stage();
             popupStage.getIcons().add(new Image("/image/destinations_icon.png"));
             popupStage.setScene(scene);
@@ -81,10 +88,10 @@ public class AgencyController extends Controller {
     try {
         // Load FXML
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Trip/DisplayTripView.fxml"));
-        
         // Load scene 
         Scene scene = new Scene(loader.load());
-        
+        DisplayTripController controller = loader.getController();
+        controller.setName(name);        
         Stage popupStage = new Stage();
         popupStage.getIcons().add(new Image("/image/trip_icon.png"));
         popupStage.setScene(scene);
@@ -101,7 +108,4 @@ public class AgencyController extends Controller {
         System.exit(0); // This will terminate the application.
     }
 
-    public void setName(String name) {
-        NameLabel.setText(name);
-    }
 }

@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -20,6 +21,13 @@ public class ExploreDestinationsController extends Controller{
     public void setDestinations(Destinations destinations) {
         this.destinationsModel = destinations;
     }
+
+    @FXML
+    private Label NameLabel;
+
+    public void setName(String name) {
+        NameLabel.setText(name);
+    }    
 
     @FXML
     public void handleViewAllDestinations(ActionEvent event) {
@@ -102,22 +110,8 @@ public class ExploreDestinationsController extends Controller{
     @FXML
     public void handleCloseMenu(ActionEvent event) {
          // Implement logic for closing the agency menu
-         try {
-            // Load FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AgencyView.fxml"));
-            
-            // Load scene 
-            Scene scene = new Scene(loader.load());
-            
-            Stage popupStage = new Stage();
-    
-            popupStage.setScene(scene);
-            popupStage.setTitle("Remove Flight");
-            popupStage.show();
-            
-            } catch (IOException e) {
-                e.printStackTrace();
-        }      
+        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+        stage.close();
     }
 }
 

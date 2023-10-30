@@ -9,6 +9,38 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<VBox alignment="CENTER" styleClass="background" prefHeight="200.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="400.0" prefWidth="600.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Trip.BookTripController">
 
-</VBox>
+    <center>
+        <VBox alignment="CENTER">
+            <ImageView fx:id="trip" fitHeight="200" fitWidth="600">
+                <image>
+                    <Image url="image/trip.png"/>
+                </image>
+            </ImageView>
+            <Separator/>
+            <HBox alignment="CENTER">
+                <Label text="Your Trip " styleClass="heading"/>
+            </HBox>
+            <Separator/>            
+        </VBox>
+    </center>
+
+        <TableView fx:id="table">
+            <columns>
+
+            </columns>
+        </TableView>
+
+    <bottom>
+        <HBox alignment="CENTER">
+            <Button text="View Individual" onAction="#handleCloseMenu" styleClass="button" prefWidth="300.0"/>            
+            <Button text="Close" onAction="#handleCloseMenu" styleClass="button" prefWidth="300.0"/>
+        </HBox>
+    </bottom>
+
+    <stylesheets>
+        <URL value="@../style.css"/>
+    </stylesheets>
+
+</BorderPane>

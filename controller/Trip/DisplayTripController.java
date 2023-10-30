@@ -8,12 +8,21 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class DisplayTripController extends Controller{
     // Your existing code here
 
+    @FXML
+    private Label NameLabel;
+
+    public void setName(String name) {
+        NameLabel.setText(name);
+    }
+        
     @FXML
     public void handleViewAddDestination(ActionEvent event) {
         // Implement logic for viewing all flights
@@ -31,29 +40,29 @@ public class DisplayTripController extends Controller{
 
     @FXML
     public void handleViewTrip(ActionEvent event) {
-        // Implement logic for removing a flight
-    }
-
-    @FXML
-    public void handleCloseMenu(ActionEvent event) {
-        // Implement logic for closing the agency menu
         try {
             // Load FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AgencyView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Trip/BookTripView.fxml"));
             
             // Load scene 
             Scene scene = new Scene(loader.load());
             
             Stage popupStage = new Stage();
-    
+            popupStage.getIcons().add(new Image("/image/trip_icon.png"));    
             popupStage.setScene(scene);
-            popupStage.setTitle("Remove Flight");
+            popupStage.setTitle("Your Trip");
             popupStage.show();
             
             } catch (IOException e) {
                 e.printStackTrace();
-        }      
+        }     
     }
+
+    @FXML
+    public void handleCloseMenu(ActionEvent event) {
+        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+        stage.close();
+    } 
 }
 
 

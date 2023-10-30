@@ -8,10 +8,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.Flights;
+import controller.AgencyController;
 
 public class ExploreFlightsController extends Controller{
     private Flights flightsModel;
@@ -19,6 +21,14 @@ public class ExploreFlightsController extends Controller{
     public void setFlights(Flights flights) {
         this.flightsModel = flights;
     }
+
+    @FXML
+    private Label NameLabel;
+
+    public void setName(String name) {
+        NameLabel.setText(name);
+    }
+    
     @FXML
     public void handleViewAllFlights(ActionEvent event) {
         try {
@@ -101,23 +111,8 @@ public class ExploreFlightsController extends Controller{
 
     @FXML
     public void handleCloseMenu(ActionEvent event) {
-        // Implement logic for closing the agency menu
-        try {
-            // Load FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AgencyView.fxml"));
-            
-            // Load scene 
-            Scene scene = new Scene(loader.load());
-            
-            Stage popupStage = new Stage();
-            popupStage.getIcons().add(new Image("/image/agency_icon.png"));
-            popupStage.setScene(scene);
-            popupStage.setTitle("Prog2 Travel Agency");
-            popupStage.show();
-            
-            } catch (IOException e) {
-                e.printStackTrace();
-        }      
-    }
+        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+        stage.close();
+    } 
 }
 
