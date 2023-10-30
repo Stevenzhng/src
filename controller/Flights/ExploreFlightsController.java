@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.Flights;
 
@@ -27,9 +28,10 @@ public class ExploreFlightsController extends Controller{
             // Load scene 
             Scene scene = new Scene(loader.load());                        
             Stage popupStage = new Stage();
-    
+            popupStage.getIcons().add(new Image("/image/flights_icon.png"));
             popupStage.setScene(scene);
-            popupStage.setTitle("View Flights");
+            popupStage.setTitle("Display Flights");
+            
             popupStage.show();
             
             } catch (IOException e) {
@@ -47,9 +49,9 @@ public class ExploreFlightsController extends Controller{
             Scene scene = new Scene(loader.load());
             
             Stage popupStage = new Stage();
-    
+            popupStage.getIcons().add(new Image("/image/flights_icon.png"));
             popupStage.setScene(scene);
-            popupStage.setTitle("View Flights Filtered");
+            popupStage.setTitle("Display Flights Filtered");
             popupStage.show();
             
             } catch (IOException e) {
@@ -67,9 +69,9 @@ public class ExploreFlightsController extends Controller{
             Scene scene = new Scene(loader.load());
             
             Stage popupStage = new Stage();
-    
+            popupStage.getIcons().add(new Image("/image/flights_icon.png"));
             popupStage.setScene(scene);
-            popupStage.setTitle("Add Flights");
+            popupStage.setTitle("Add Flight");
             popupStage.show();
             
             } catch (IOException e) {
@@ -87,7 +89,7 @@ public class ExploreFlightsController extends Controller{
             Scene scene = new Scene(loader.load());
             
             Stage popupStage = new Stage();
-    
+            popupStage.getIcons().add(new Image("/image/flights_icon.png"));
             popupStage.setScene(scene);
             popupStage.setTitle("Remove Flight");
             popupStage.show();
@@ -108,9 +110,9 @@ public class ExploreFlightsController extends Controller{
             Scene scene = new Scene(loader.load());
             
             Stage popupStage = new Stage();
-    
+            popupStage.getIcons().add(new Image("/image/agency_icon.png"));
             popupStage.setScene(scene);
-            popupStage.setTitle("Remove Flight");
+            popupStage.setTitle("Prog2 Travel Agency");
             popupStage.show();
             
             } catch (IOException e) {

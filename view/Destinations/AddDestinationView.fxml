@@ -10,7 +10,20 @@
 <?import javafx.scene.layout.*?>
 
 <VBox alignment="CENTER" styleClass="background" prefHeight="420.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Destinations.ModifyDestinationsController">
-    <Label text="Add New Destination" styleClass="heading" />
+
+    <VBox alignment="CENTER" spacing="20">
+        <ImageView fx:id="destination" fitHeight="200" fitWidth="600">
+            <image>
+                <Image url="image/destination.png"/>
+            </image>
+        </ImageView>
+        <Separator/>
+        <HBox alignment="CENTER">
+            <Label text="Add a Destination" styleClass="heading"/>
+        </HBox>
+        <Separator/>
+    </VBox>
+
     <HBox spacing="5" alignment="CENTER">
         <Label text="Name:   " />
         <TextField fx:id="nameField" />
@@ -18,9 +31,13 @@
     <HBox spacing="5" alignment="CENTER">
         <Label text="Country:" />
         <TextField fx:id="countryField" />
-    </HBox>            
-    <Button text="Add Destination" onAction="#addDestination" />  
+    </HBox>
 
+    <HBox alignment="CENTER">
+        <Button text="Add Destination" onAction="#addDestination" styleClass="button" prefWidth="300.0"/>  
+        <Button text="Close" onAction="#closeWindow" styleClass="button" prefWidth="300.0"/>
+    </HBox> 
+    
     <stylesheets>
         <URL value="@../style.css"/>
     </stylesheets>

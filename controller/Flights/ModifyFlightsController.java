@@ -2,10 +2,13 @@ package controller.Flights;
 
 import au.edu.uts.ap.javafx.Controller;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import model.Agency;
 import model.Destination;
 import model.Destinations;
@@ -42,7 +45,8 @@ public class ModifyFlightsController extends Controller{
         flightsInstance.addFlight(flight);
             System.out.println("Added flight: " + airline + ", " + flightNo +  ", " + takeoff +  ", " + landing +  ", " + cost);
     }
-
+    
+    @FXML
     public void removeFlight() throws DuplicateItemException {
         String airline = airlineField.getText();
         int flightNo = Integer.parseInt(flightNumberField.getText());
@@ -59,5 +63,10 @@ public class ModifyFlightsController extends Controller{
             System.err.println("Error: flight not found!");
         }
     }
+    @FXML
+    private void closeWindow(ActionEvent event) {
+        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+        stage.close();
+    }     
 }
 

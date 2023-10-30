@@ -2,8 +2,11 @@ package controller.Destinations;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import model.Destinations; // Assuming the correct class is here
 import model.Exceptions.DuplicateItemException;
 import model.Exceptions.ItemNotFoundException;
@@ -19,7 +22,8 @@ public class ModifyDestinationsController {
     private TextField countryField;
 
     private Destinations destinationsInstance = Destinations.getInstance(new Agency());
-
+    
+    @FXML
     public void addDestination() throws DuplicateItemException {
         String name = nameField.getText();
         String country = countryField.getText();
@@ -42,4 +46,10 @@ public class ModifyDestinationsController {
             System.err.println("Error: Destination not found!");
         }
     }
+
+    @FXML
+    private void closeWindow(ActionEvent event) {
+        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+        stage.close();
+    }   
 }

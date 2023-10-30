@@ -10,27 +10,42 @@
 <?import javafx.scene.control.*?>
 
 <VBox alignment="CENTER" styleClass="background" prefHeight="420.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Flights.ModifyFlightsController">
-    <Label text="Add New Flight" styleClass="heading" />
-    <HBox spacing="5" alignment="CENTER">
-        <Label text="Airline:" />
-        <TextField fx:id="airlineField" />
-    </HBox>
-    <HBox spacing="5" alignment="CENTER">
-        <Label text="Flight Number:" />
-        <TextField fx:id="flightNumberField" />
-    </HBox>
-    <HBox spacing="5" alignment="CENTER">
-        <Label text="Takeoff Country:" />
-        <TextField fx:id="takeoffCountryField" />
-    </HBox>
-    <HBox spacing="5" alignment="CENTER">
-        <Label text="Landing Country:" />
-        <TextField fx:id="landingCountryField" />
-    </HBox>
-    <HBox spacing="5" alignment="CENTER">
-        <Label text="Cost:" />
-        <TextField fx:id="costField" />
-    </HBox>
-    <Button text="Add Flight" onAction="#addFlight" />        
-</VBox>
+    <VBox alignment="CENTER" spacing="20">
+        <ImageView fx:id="flight" fitHeight="200" fitWidth="600">
+            <image>
+                <Image url="image/flight.png"/>
+            </image>
+        </ImageView>
+        <Separator/>
+        <HBox alignment="CENTER">
+            <Label text="Add a Flight" styleClass="heading"/>
+        </HBox>
+        <Separator/>
+    </VBox>
 
+    <GridPane hgap="10" vgap="10" alignment="CENTER">
+        <Label text="Airline:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="airlineField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="Flight Number:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="flightNumberField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Takeoff Country:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="takeoffCountryField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Landing Country:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="landingCountryField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="Cost:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <TextField fx:id="costField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    </GridPane>
+
+    <HBox alignment="CENTER">
+        <Button text="Add Flight" onAction="#addFlight" styleClass="button" prefWidth="300.0"/>  
+        <Button text="Close" onAction="#closeWindow" styleClass="button" prefWidth="300.0"/>
+    </HBox>    
+
+    <stylesheets>
+        <URL value="@../style.css"/>
+    </stylesheets>        
+</VBox>

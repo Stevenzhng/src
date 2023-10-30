@@ -65,12 +65,22 @@ public class Flights {
 
     public ObservableList<Flight> flightslist() {
         ObservableList<Flight> flightsList = FXCollections.observableArrayList();
-        flightsList.add(new Flight("American Airlines", 101, "JFK", "LHR", 500.00));
-        flightsList.add(new Flight("Delta Air Lines", 102, "LAX", "CDG", 700.00));
-        flightsList.add(new Flight("Qantas", 103, "SYD", "HND", 450.00));
-        flightsList.add(new Flight("Air India", 104, "ORD", "DEL", 900.00));
-        return flightsList;
+        flightsList.add(new Flight("Singapore Airlines", 316, "France", "France", 831.78));
+        flightsList.add(new Flight("American Airlines", 306, "France", "Australia", 786.85));
+        flightsList.add(new Flight("Tiger Airways", 908, "Australia", "France", 53.83));
+        flightsList.add(new Flight("United Airlines", 621, "France", "Peru", 256.62));
+        flightsList.add(new Flight("Etihad", 472, "Peru", "France", 967.78));
+        flightsList.add(new Flight("United Airlines", 226, "France", "Egypt", 440.33));
+        flightsList.add(new Flight("Etihad", 918, "Egypt", "France", 438.64));
+        flightsList.add(new Flight("QANTAS", 959, "France", "Canada", 753.28));
+        flightsList.add(new Flight("Etihad", 165, "Canada", "France", 386.72));
+        flightsList.add(new Flight("Singapore Airlines", 73, "Australia", "Australia", 787.62));
+        flightsList.add(new Flight("Singapore Airlines", 143, "Australia", "Peru", 259.36));
+        flightsList.add(new Flight("Egypt Air", 488, "Peru", "Australia", 639.56));
+        flightsList.add(new Flight("United Airlines", 147, "Australia", "Egypt", 487.2));
+        flightsList.add(new Flight("Egypt Air", 91, "Egypt", "Australia", 996.02));        return flightsList;
     }
+
     public static Flights getInstance(Agency agency) {
         if (instance == null) {
             instance = new Flights(agency);

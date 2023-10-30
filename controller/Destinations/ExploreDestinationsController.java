@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.Destinations;
 
@@ -30,8 +31,9 @@ public class ExploreDestinationsController extends Controller{
             Scene scene = new Scene(loader.load());
             
             Stage popupStage = new Stage();
+            popupStage.getIcons().add(new Image("/image/destinations_icon.png"));
             popupStage.setScene(scene);
-            popupStage.setTitle("View Destinations");
+            popupStage.setTitle("Display Destinations");
             popupStage.show();
             
             } catch (IOException e) {
@@ -47,11 +49,11 @@ public class ExploreDestinationsController extends Controller{
             
             // Load scene 
             Scene scene = new Scene(loader.load());
-            
+
             Stage popupStage = new Stage();
-    
+            popupStage.getIcons().add(new Image("/image/destinations_icon.png"));    
             popupStage.setScene(scene);
-            popupStage.setTitle("Display Filtered Destination");
+            popupStage.setTitle("Display Destinations Filtered");
             popupStage.show();
             
             } catch (IOException e) {
@@ -67,7 +69,7 @@ public class ExploreDestinationsController extends Controller{
             // Load scene 
             Scene scene = new Scene(loader.load());
             Stage popupStage = new Stage();
-
+            popupStage.getIcons().add(new Image("/image/destinations_icon.png"));
             popupStage.setScene(scene);
             popupStage.setTitle("Add Destination");
             popupStage.show();
@@ -87,7 +89,7 @@ public class ExploreDestinationsController extends Controller{
             Scene scene = new Scene(loader.load());
             
             Stage popupStage = new Stage();
-    
+            popupStage.getIcons().add(new Image("/image/destinations_icon.png"));    
             popupStage.setScene(scene);
             popupStage.setTitle("Remove Destination");
             popupStage.show();
