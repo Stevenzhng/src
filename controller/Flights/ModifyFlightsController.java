@@ -41,7 +41,7 @@ public class ModifyFlightsController extends Controller{
         String takeoff = takeoffCountryField.getText();
         String landing = landingCountryField.getText();
         double cost = Double.parseDouble(costField.getText());
-
+        
         try {
         Flight flight = new Flight(airline, flightNo, takeoff, landing, cost);
         flightsInstance.addFlight(flight);

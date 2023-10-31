@@ -25,13 +25,42 @@ public class DisplayTripController extends Controller{
         
     @FXML
     public void handleViewAddDestination(ActionEvent event) {
-        // Implement logic for viewing all flights
+        try {
+            // Load FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Destinations/AddDestinationView.fxml"));
+            
+            // Load scene 
+            Scene scene = new Scene(loader.load());
+            
+            Stage popupStage = new Stage();
+            popupStage.getIcons().add(new Image("/image/destination_icon.png"));    
+            popupStage.setScene(scene);
+            popupStage.setTitle("Display Trip Destination");
+            popupStage.show();
+            
+            } catch (IOException e) {
+                e.printStackTrace();
+        }    
     }
 
     @FXML
     public void handleViewRemoveDestination(ActionEvent event) {
-        // Implement logic for viewing flights by country
-    }
+        try {
+            // Load FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Destinations/RemoveDestinationView.fxml"));
+            
+            // Load scene 
+            Scene scene = new Scene(loader.load());
+            
+            Stage popupStage = new Stage();
+            popupStage.getIcons().add(new Image("/image/destination_icon.png"));    
+            popupStage.setScene(scene);
+            popupStage.setTitle("Remove Trip Destination");
+            popupStage.show();
+            
+            } catch (IOException e) {
+                e.printStackTrace();
+        }     }
 
     @FXML
     public void handleAddConnectingFlight(ActionEvent event) {
