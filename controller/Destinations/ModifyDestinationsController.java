@@ -25,8 +25,8 @@ public class ModifyDestinationsController {
     
     @FXML
     public void addDestination() throws DuplicateItemException {
-        String name = nameField.getText();
-        String country = countryField.getText();
+        String name = nameField.getText();//get destination name
+        String country = countryField.getText(); //get destination country
 
         try {
         Destination destination = new Destination(name, country);
@@ -41,13 +41,13 @@ public class ModifyDestinationsController {
     }
     
     public void removeDestination() throws ItemNotFoundException {
-        String name = nameField.getText();
-        String country = countryField.getText();
+        String name = nameField.getText(); //get destination name
+        String country = countryField.getText(); //get destination country 
 
         try {
             Destination destinationToRemove = destinationsInstance.destination(name, country);
-            destinationsInstance.removeDestination(destinationToRemove);
-            System.out.println("Removed destination: " + name + ", " + country);
+            destinationsInstance.removeDestination(destinationToRemove); //remove
+            System.out.println("Removed destination " + name + ", " + country);
         } catch (ItemNotFoundException e) {
             System.err.println("Error");
             e.printStackTrace();
@@ -58,6 +58,6 @@ public class ModifyDestinationsController {
     @FXML
     private void closeWindow(ActionEvent event) {
         Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        stage.close();
+        stage.close(); //exit 
     }   
 }

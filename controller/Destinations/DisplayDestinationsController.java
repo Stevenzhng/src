@@ -34,16 +34,16 @@ public class DisplayDestinationsController extends Controller{
             destinations.insertDummyData();
         }
         originalList = destinations.getDestinations();
-        // Set items for the table
+        // Set table
         destinationsTable.setItems(originalList);
 
-        // Bind the columns to properties
+        //columns
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         countryColumn.setCellValueFactory(new PropertyValueFactory<>("country"));    
     }
 
     @FXML
-    private void handleSearch() {
+    private void handleSearch() {//search the oberservable list 
         String searchQuery = searchField.getText().toLowerCase();
         if (searchQuery.isEmpty()) {
             destinationsTable.setItems(originalList);
@@ -62,6 +62,6 @@ public class DisplayDestinationsController extends Controller{
     @FXML
     private void closeWindow(ActionEvent event) {
         Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        stage.close();
+        stage.close();// exit 
     }
 }

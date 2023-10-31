@@ -18,7 +18,7 @@ public class DisplayTripController extends Controller{
 
     @FXML
     private Label NameLabel;
-
+    //set name 
     public void setName(String name) {
         NameLabel.setText(name);
     }
@@ -90,7 +90,7 @@ public class DisplayTripController extends Controller{
     @FXML
     public void handleCloseMenu(ActionEvent event) {
         Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        stage.close();
+        stage.close(); //exit
     } 
 }
 

@@ -45,15 +45,15 @@ public class LoginController extends Controller<Agency> {
                 Administrator administrator = model.getAdministrators().getAdministrator(username, password);
                 name = administrator.getName();
 
-                // Load the AgencyView
+                // Load Agency
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AgencyView.fxml"));
                 Parent root = loader.load();
 
-                // Pass the name to the AgencyController
+                // name
                 AgencyController controller = loader.getController();
                 controller.setName(name);
 
-                // Create the scene and show the stage
+                // stage
                 Stage agencyStage = new Stage();
                 agencyStage.getIcons().add(new Image("/image/agency_icon.png"));
                 Scene scene = new Scene(root);
@@ -61,7 +61,6 @@ public class LoginController extends Controller<Agency> {
                 agencyStage.setTitle("Prog2 Travel Agency");
                 agencyStage.show();
 
-                // Close the login
                 Stage currentStage = (Stage) usernameField.getScene().getWindow();
                 currentStage.close();
             }
@@ -70,13 +69,13 @@ public class LoginController extends Controller<Agency> {
             InvalidCredentialsException.show("Error", "InvalidCredentialsException", "Invalid credentials provided.");
         }
     }
-
+    //set name 
     public void setNameLabel(String name) {
         NameLabel.setText(name);
     }
 
     @FXML
     private void ExitButton(ActionEvent event) {
-        System.exit(0);
+        System.exit(0); //exit 
     }
 }

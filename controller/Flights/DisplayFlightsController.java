@@ -39,10 +39,10 @@ public class DisplayFlightsController {
     @FXML
     public void initialize() {    
         originalList = flights.getFlights();
-        // Set items for the table
+        // Set table
         flightsTable.setItems(originalList);
 
-        // Bind the columns to properties
+        // columns
         airlineColumn.setCellValueFactory(new PropertyValueFactory<>("airline"));
         flightNumberColumn.setCellValueFactory(new PropertyValueFactory<>("flightNo"));
         takeoffCountryColumn.setCellValueFactory(new PropertyValueFactory<>("takeoff"));
@@ -51,7 +51,7 @@ public class DisplayFlightsController {
     }
 
     @FXML
-    private void handleSearch() {
+    private void handleSearch() { //search the oberservable list 
         String searchQuery = searchField.getText().toLowerCase();
         if (searchQuery.isEmpty()) {
             flightsTable.setItems(originalList);
@@ -70,6 +70,6 @@ public class DisplayFlightsController {
     @FXML
     private void closeWindow(ActionEvent event) {
         Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        stage.close();
+        stage.close(); //exit 
     }    
 }

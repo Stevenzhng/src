@@ -23,18 +23,19 @@ public class AgencyController extends Controller {
     @FXML
     private Label NameLabel; 
     private String name;
-
+    //set login user name 
     public void setName(String name) {
         this.name = name;
         NameLabel.setText(this.name); 
     }
-
+    //import destinations and flights model 
     private Destinations destinationsModel;
     private Flights flightsModel;
-
+    //set destinations 
     public void setDestinationsModel(Destinations destinations) {
         this.destinationsModel = destinations;
     }
+    //set flights 
     public void setFlightsModel(Flights flights) {
         this.flightsModel = flights;
     }
@@ -105,7 +106,7 @@ public class AgencyController extends Controller {
 
     @FXML
     public void ExitButton(ActionEvent event) {
-        System.exit(0); // This will terminate the application.
+        System.exit(0); // Exit
     }
 
 }
