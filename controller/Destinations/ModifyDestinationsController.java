@@ -28,22 +28,30 @@ public class ModifyDestinationsController {
         String name = nameField.getText();
         String country = countryField.getText();
 
+        try {
         Destination destination = new Destination(name, country);
         destinationsInstance.addDestination(destination);
         System.out.println("Added destination: " + name + ", " + country);
+        } catch (DuplicateItemException e) { 
+            System.err.println("Error");
+            e.printStackTrace();
+            DuplicateItemException.show("Error", "DuplicateItemException", "Duplicate found.");            
+        }
+
     }
     
     public void removeDestination() throws ItemNotFoundException {
         String name = nameField.getText();
         String country = countryField.getText();
 
-        Destination destinationToRemove = new Destination(name, country);
-
         try {
+            Destination destinationToRemove = destinationsInstance.destination(name, country);
             destinationsInstance.removeDestination(destinationToRemove);
             System.out.println("Removed destination: " + name + ", " + country);
         } catch (ItemNotFoundException e) {
-            System.err.println("Error: Destination not found!");
+            System.err.println("Error");
+            e.printStackTrace();
+            ItemNotFoundException.show("Error", "ItemNotFoundException", "Item not found.");            
         }
     }
 

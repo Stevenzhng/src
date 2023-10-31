@@ -15,6 +15,7 @@ import model.Destinations;
 import model.Flight;
 import model.Flights;
 import model.Exceptions.DuplicateItemException;
+import model.Exceptions.InvalidCredentialsException;
 import model.Exceptions.ItemNotFoundException;
 
 public class ModifyFlightsController extends Controller{
@@ -41,28 +42,35 @@ public class ModifyFlightsController extends Controller{
         String landing = landingCountryField.getText();
         double cost = Double.parseDouble(costField.getText());
 
+        try {
         Flight flight = new Flight(airline, flightNo, takeoff, landing, cost);
         flightsInstance.addFlight(flight);
             System.out.println("Added flight: " + airline + ", " + flightNo +  ", " + takeoff +  ", " + landing +  ", " + cost);
+        } catch (DuplicateItemException e) { 
+            System.err.println("Error");
+            e.printStackTrace();
+            DuplicateItemException.show("Error", "DuplicateItemException", "Duplicate found.");            
+        }    
     }
     
     @FXML
-    public void removeFlight() throws DuplicateItemException {
-        String airline = airlineField.getText();
-        int flightNo = Integer.parseInt(flightNumberField.getText());
+    public void removeFlight() {
         String takeoff = takeoffCountryField.getText();
         String landing = landingCountryField.getText();
-        double cost = Double.parseDouble(costField.getText());
-
-        Flight flightToRemove = new Flight(airline, flightNo, takeoff, landing, cost);
-
+    
         try {
-            flightsInstance.removeFlight(flightToRemove);
-            System.out.println("Removed flight: " + airline + ", " + flightNo +  ", " + takeoff +  ", " + landing +  ", " + cost);
+            Flight flightToRemove = flightsInstance.getFlight(takeoff, landing); // get the flight 
+            flightsInstance.removeFlight(flightToRemove); // remove  flight
+            System.out.println("Removed flight with takeoff from: " + takeoff + " and landing in: " + landing);
         } catch (ItemNotFoundException e) {
-            System.err.println("Error: flight not found!");
+            System.err.println("Error");
+            e.printStackTrace();
+            ItemNotFoundException.show("Error", "ItemNotFoundException", "Item not found.");
+
         }
     }
+    
+    
     @FXML
     private void closeWindow(ActionEvent event) {
         Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();

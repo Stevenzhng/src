@@ -15,18 +15,17 @@ import javafx.scene.image.ImageView;
 public class InvalidCredentialsException extends Exception {
 
     public static void show(String... messages) {
-        // Create a new stage for the error window
+        // Create stage 
         Stage errorStage = new Stage();
-        Image image = new Image("/image/error.png"); // Make sure the path to your image is correct
+        Image image = new Image("/image/error.png"); 
         ImageView imageView = new ImageView(image);
-        imageView.setFitWidth(380);  // set desired width
-        imageView.setFitHeight(450); // set desired height
-        imageView.setPreserveRatio(true);  // keep the original aspect ratio
+        imageView.setFitWidth(380);  
+        imageView.setFitHeight(450); 
+        imageView.setPreserveRatio(true);  
         
-        // Create the BorderPane
         BorderPane root = new BorderPane();
 
-        // Create a scene for the error window
+        // Create scene 
         VBox layout = new VBox(10);
         layout.setAlignment(Pos.CENTER);
         layout.getChildren().add(imageView);
@@ -44,21 +43,18 @@ public class InvalidCredentialsException extends Exception {
         }
 
         Button closeButton = new Button("Close");
-        closeButton.setMaxWidth(Double.MAX_VALUE);  // Make the button take up full width
-        closeButton.setPadding(new Insets(5, 10, 5, 10));  // Padding to the button (top, right, bottom, left)        
+        closeButton.setMaxWidth(Double.MAX_VALUE);  
+        closeButton.setPadding(new Insets(5, 10, 5, 10));  
         closeButton.setOnAction((ActionEvent event) -> errorStage.close());
 
-        // Add the VBox to the center of the BorderPane
         root.setCenter(layout);
 
-        // Add the button to the bottom of the BorderPane
         root.setBottom(closeButton);
-        BorderPane.setMargin(closeButton, new Insets(0, 10, 10, 10)); // top, right, bottom, left
+        BorderPane.setMargin(closeButton, new Insets(0, 10, 10, 10)); 
 
-        Scene errorScene = new Scene(root, 400, 300); // width, height
+        Scene errorScene = new Scene(root, 400, 300); 
         errorScene.getStylesheets().add("view/style.css");
 
-        // Show the error window
         errorStage.setScene(errorScene);
         errorStage.show();
     }
